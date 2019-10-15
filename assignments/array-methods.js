@@ -115,6 +115,7 @@ console.log(partEmail);
 console.log("");
 
 // Problem 2
+// We could capitalize all the companies name.
 console.log("Company Name Capitalized:");
 let compName = [];
 
@@ -122,4 +123,9 @@ compName = runners.map((upperCase)=>{
   return upperCase.company_name.toUpperCase();
 })
 console.log(compName);
+
 // Problem 3
+// We could list all the participants by their last name alphabetically. We could loop and sort them.
+// let partticipantsSorted = [];
+
+// partticipantsSorted = 
