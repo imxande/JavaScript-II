@@ -55,31 +55,71 @@ const runners = [
   { id: 50, first_name: "Shell", last_name: "Baine", email: "sbaine1d@intel.com", shirt_size: "M", company_name: "Gabtype", donation: 171 },
 ];
 
+console.log(" ==== Challenge 1: Use .forEach() ====");
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs. Combine both the first and last names and populate a new array called `fullNames`. This array will contain just strings.
 let fullNames = [];
-console.log(fullNames);
+runners.forEach(function(item){
 
+  return fullNames.push(`${item.first_name} ${item.last_name}`);
+})
+console.log(fullNames);
+console.log("");
+
+console.log(" ==== Challenge 2: Use .map() ====");
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runners' first names in uppercase because the director BECAME DRUNK WITH POWER. Populate an array called `firstNamesAllCaps`. This array will contain just strings.
 let firstNamesAllCaps = [];
-console.log(firstNamesAllCaps);
 
+firstNamesAllCaps = runners.map(function(uppercase){
+    return uppercase.first_name.toUpperCase();
+})
+console.log(firstNamesAllCaps);
+console.log("");
+
+console.log("==== Challenge 3: Use .filter() ====")
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue. We need a filtered version of the runners array, containing only those runners with large sized shirts so they can choose a different size. This will be an array of objects.
 let runnersLargeSizeShirt = [];
+
+runnersLargeSizeShirt = runners.filter((shirt)=>{
+  return shirt.shirt_size === "L";
+})
 console.log(runnersLargeSizeShirt);
+
+console.log("==== Challenge 4: Use .reduce() ====")
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations and save the total into a ticketPriceTotal variable.
 let ticketPriceTotal = 0;
-console.log(ticketPriceTotal);
 
+ticketPriceTotal = runners.reduce((total, value)=>{
+  return total += value.donation;
+}, 0);
+
+console.log(ticketPriceTotal);
+console.log("");
+
+console.log("==== Challenge 5: Be Creative ====");
+console.log("Participant email:");
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+// Let's say we want to send out promo emails to our participants or recognition so they can show at their repective companies. Then we can create a new array of emails.
+let partEmail = [];
+runners.forEach((index)=>{
+  return partEmail.push(`${index.email}`);
+})
+console.log(partEmail);
+console.log("");
 
 // Problem 2
+console.log("Company Name Capitalized:");
+let compName = [];
 
+compName = runners.map((upperCase)=>{
+  return upperCase.company_name.toUpperCase();
+})
+console.log(compName);
 // Problem 3
